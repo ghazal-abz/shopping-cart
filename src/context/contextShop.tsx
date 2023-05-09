@@ -1,4 +1,4 @@
-import {useContext, useReducer} from "react";
+import {useContext, useEffect, useReducer} from "react";
 import {createContext} from "react";
 import reducer from "../reducer/reducer";
 import cartItem from '../data/data';
@@ -28,6 +28,10 @@ const CartProvider = ({children}: ContextShopProp) => {
     const changeQuantity = changeObj => {
         dispatch({type: "CHANGE_QUANTITY", payload: changeObj});
     };
+
+    useEffect(() => {
+        dispatch({type:'GET_TOTALS'});
+    }, [state.cart]);
 
     return (
         <CartContext.Provider value={{...state, clearCart, remove, changeQuantity}}>
