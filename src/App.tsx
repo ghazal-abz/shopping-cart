@@ -1,5 +1,5 @@
-import Cart from "./Components/Cart/cart"
-import Navbar from "./Components/Navbar/navbar"
+import Cart from "./components/Cart/cart"
+import Navbar from "./components/Navbar/navbar"
 
 function App() {
     return (
